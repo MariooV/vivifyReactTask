@@ -88,6 +88,7 @@ const MovieForm = props => {
       custom: true,
     };
     movieCtx.addItem(movie);
+    resetForm();
   };
 
   return (

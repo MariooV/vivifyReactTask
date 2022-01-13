@@ -37,7 +37,7 @@ const MovieCard = ({ movie }) => {
           <div className="card-footer">
             <div className="clearfix">
               <div className="float-left mt-1">
-                <StarRating rating={movie.rating} />
+                <StarRating rating={movie.rating} ratings={movie.ratings} />
               </div>
               <div className="card-footer-badge float-right badge badge-primary badge-pill">{movie.rating}</div>
             </div>
@@ -45,10 +45,20 @@ const MovieCard = ({ movie }) => {
         </div>
       )}
       {isHidden && (
-        <div className="movie-card button-card card">
-          <button onClick={deleteMovieHandler} className="button button-remove">
-            Remove this movie
-          </button>
+        <div className="movie-card card">
+          <div className="button-card">
+            <button onClick={deleteMovieHandler} className="button button-remove">
+              Remove this movie
+            </button>
+          </div>
+          <div className="card-footer card-bottom">
+            <div className="clearfix">
+              <div className="float-left mt-1">
+                <StarRating rating={movie.rating} ratings={movie.ratings} />
+              </div>
+              <div className="card-footer-badge float-right badge badge-primary badge-pill">{movie.rating}</div>
+            </div>
+          </div>
         </div>
       )}
     </div>

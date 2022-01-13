@@ -52,6 +52,6 @@
     "imageUrl": "../images/Resident_Evil_Vendetta.jpg",
     "rating": 4.2,
     "ratings": [4.2],
-    "custom": false
+    "custom": true
   }
 ]

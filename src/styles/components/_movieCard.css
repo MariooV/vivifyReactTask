@@ -18,8 +18,15 @@
   font-size: 1rem;
 }
 
+.card-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
 .button-card {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 400px;
 }

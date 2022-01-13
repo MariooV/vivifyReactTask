@@ -19,12 +19,19 @@ const styles = {
   },
 };
 
-const cropWidth = rating => {
-  return Math.floor((rating * width) / 5);
+const cropWidth = ratings => {
+  let sum = 0;
+  if (ratings.length > 0) {
+    ratings.forEach(item => (sum = sum + item));
+    let total = sum / ratings.length;
+    return Math.floor((total * width) / 5);
+  } else {
+    return Math.floor((0 * width) / 5);
+  }
 };
 
-const StarRating = ({ rating }) => {
-  const containerStyle = { width: `${cropWidth(rating)}px` };
+const StarRating = ({ rating, ratings }) => {
+  const containerStyle = { width: `${cropWidth(ratings)}px` };
 
   return (
     <div>
