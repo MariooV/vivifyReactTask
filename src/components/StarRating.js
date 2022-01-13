@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+
+import MoviesContext from '../movieList/movies-context';
 
 const width = 110;
 
@@ -30,19 +32,32 @@ const cropWidth = ratings => {
   }
 };
 
-const StarRating = ({ rating, ratings }) => {
+const StarRating = ({ rating, ratings, id, custom }) => {
+  const moviesCtx = useContext(MoviesContext);
   const containerStyle = { width: `${cropWidth(ratings)}px` };
+
+  const onClickHandler = event => {
+    event.preventDefault();
+
+    if (!custom) return;
+
+    const movieIndex = moviesCtx.items.findIndex(item => item.id == id);
+    const movie = moviesCtx.items[movieIndex];
+    const number = event.target.getAttribute('href');
+
+    // Ideja koja nije implenetirana, da se u ratings niz doda vrednost koja je pritisnuta, gde bi se zatim pozvala funkcija koja bi opet renderovala ukupnu ocenu i zvezdice. Gde se ukupna ocena racuna kao suma ratings niza / ratings.length
+  };
 
   return (
     <div>
       <div style={styles.starsOuter}>
         <div style={containerStyle}>
-          <div style={styles.starsEmptyInner}>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
+          <div onClick={onClickHandler} style={styles.starsEmptyInner}>
+            <a href="1" className="fa fa-star-o fa-lg star-hover" style={styles.star}></a>
+            <a href="2" className="fa fa-star-o fa-lg star-hover" style={styles.star}></a>
+            <a href="3" className="fa fa-star-o fa-lg star-hover" style={styles.star}></a>
+            <a href="4" className="fa fa-star-o fa-lg star-hover" style={styles.star}></a>
+            <a href="5" className="fa fa-star-o fa-lg star-hover" style={styles.star}></a>
           </div>
           <div style={styles.starsInner}>
             <i className="fa fa-star fa-lg" style={styles.star}></i>

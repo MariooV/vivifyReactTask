@@ -37,7 +37,7 @@ const MovieCard = ({ movie }) => {
           <div className="card-footer">
             <div className="clearfix">
               <div className="float-left mt-1">
-                <StarRating rating={movie.rating} ratings={movie.ratings} />
+                <StarRating rating={movie.rating} ratings={movie.ratings} id={movie.id} custom={movie.custom} />
               </div>
               <div className="card-footer-badge float-right badge badge-primary badge-pill">{movie.rating}</div>
             </div>
@@ -54,7 +54,7 @@ const MovieCard = ({ movie }) => {
           <div className="card-footer card-bottom">
             <div className="clearfix">
               <div className="float-left mt-1">
-                <StarRating rating={movie.rating} ratings={movie.ratings} />
+                <StarRating rating={movie.rating} ratings={movie.ratings} id={movie.id} custom={movie.custom} />
               </div>
               <div className="card-footer-badge float-right badge badge-primary badge-pill">{movie.rating}</div>
             </div>

@@ -1,0 +1,7 @@
+.star-hover:hover {
+  cursor: pointer;
+}
+
+.stars-link a {
+  text-decoration: none;
+}
