@@ -1,0 +1,27 @@
+.button {
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button-add {
+  background-color: #fff;
+  color: #000;
+}
+
+.button:disabled,
+.button:disabled:hover,
+.button:disabled:active {
+  background-color: #919191;
+  color: #626262;
+  cursor: not-allowed;
+}
