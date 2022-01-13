@@ -7,7 +7,8 @@
     "year": 2016,
     "imageUrl": "../images/Kingsglaive_Final_Fantasy_XV.jpg",
     "rating": 4.5,
-    "ratings": [4.5]
+    "ratings": [4.5],
+    "custom": false
   },
   {
     "id": 200,
@@ -17,7 +18,8 @@
     "year": 2001,
     "imageUrl": "../images/Final_Fantasy_Spirits_Within.jpg",
     "rating": 4.5,
-    "ratings": [4.5]
+    "ratings": [4.5],
+    "custom": false
   },
   {
     "id": 300,
@@ -27,7 +29,8 @@
     "year": 2008,
     "imageUrl": "../images/Ghost_In_The_Shell_2_0.jpg",
     "rating": 5,
-    "ratings": [5]
+    "ratings": [5],
+    "custom": false
   },
   {
     "id": 400,
@@ -37,7 +40,8 @@
     "year": 2014,
     "imageUrl": "../images/Appleseed_Alpha.jpg",
     "rating": 3.8,
-    "ratings": [3.8]
+    "ratings": [3.8],
+    "custom": false
   },
   {
     "id": 500,
@@ -47,6 +51,7 @@
     "year": 2014,
     "imageUrl": "../images/Resident_Evil_Vendetta.jpg",
     "rating": 4.2,
-    "ratings": [4.2]
+    "ratings": [4.2],
+    "custom": false
   }
 ]

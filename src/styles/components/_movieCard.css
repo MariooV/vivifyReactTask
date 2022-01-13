@@ -9,6 +9,17 @@
   height: 450px;
 }
 
+.movie-cardH:hover {
+  cursor: pointer;
+  display: none;
+}
+
 .card-footer-badge {
   font-size: 1rem;
+}
+
+.button-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

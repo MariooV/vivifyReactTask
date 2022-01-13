@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import useValidation from '../../hooks/use-validation';
+import MoviesContext from '../../movieList/movies-context';
 
 const textValidation = input => input.trim() !== '';
 const urlValidation = input => input.trim() !== '' && input.includes('/');
@@ -9,6 +10,8 @@ const yearValidation = input => {
 };
 
 const MovieForm = props => {
+  const movieCtx = useContext(MoviesContext);
+
   const {
     value: inputTitle,
     isInputValid: isTitleValid,
@@ -74,7 +77,7 @@ const MovieForm = props => {
     event.preventDefault();
 
     const movie = {
-      id: (props.movieCount + 1) * 100,
+      id: (movieCtx.totalAmount + 1) * 100,
       title: inputTitle,
       subtitle: inputSubtitle,
       description: inputDescription,
@@ -82,8 +85,9 @@ const MovieForm = props => {
       imageUrl: inputURL,
       rating: 0,
       ratings: [],
+      custom: true,
     };
-    props.onAddMovie(movie);
+    movieCtx.addItem(movie);
   };
 
   return (

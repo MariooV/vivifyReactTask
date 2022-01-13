@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import MovieCard from './MovieCard';
+import MoviesContext from '../../movieList/movies-context';
 
-const getMovies = movies => (
-  <div className="card-deck">
-    {movies.map(movie => (
-      <MovieCard key={movie.id} movie={movie} />
-    ))}
-  </div>
-);
+const getMovies = movies => {
+  const movieCtx = useContext(MoviesContext);
 
-const MovieList = ({ movies }) => <div>{getMovies(movies)}</div>;
+  const onRemoveHandler = id => {};
+
+  return (
+    <div className="card-deck">
+      {movieCtx.items.map(movie => (
+        <MovieCard key={movie.id} movie={movie} onRemove={onRemoveHandler} />
+      ))}
+    </div>
+  );
+};
+
+const MovieList = ({ movies }) => <div>{getMovies()}</div>;
 
 MovieList.defaultProps = {
   movies: [],
